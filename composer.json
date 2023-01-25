@@ -1,0 +1,29 @@
+{
+  "name": "sbwerewolf/fias-gar-schema-deploy-tool",
+  "description": "Kit of templates and scripts to deploy FIAS GAR database",
+  "type": "tool",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nikolay Volkhin",
+      "email": "ulfnew@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "": [
+        "src/"
+      ]
+    }
+  },
+  "require": {
+    "psr/log": "^3.0",
+    "sbwerewolf/json-serialize-trait": "^1.0",
+    "sbwerewolf/batch-file-scripting": "^1.0",
+    "ext-pdo": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "monolog/monolog": "^3.2"
+  }
+}
