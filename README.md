@@ -7,7 +7,7 @@ Kit of templates and scripts to deploy FIAS GAR database
 
 ## How to install
 
-`composer require sbwerewolf/fias-gar-db-installer`
+`composer require sbwerewolf/fias-gar-schema-deploy-tool`
 
 ## How to use
 
