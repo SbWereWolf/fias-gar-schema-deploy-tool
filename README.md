@@ -17,10 +17,10 @@ First step is to create tables, second - indexes.
 
 - Create .env file with DB credentials
 - Copy-paste directory `test/template` to reachable location
-- Copy-paste [install-storage.php](test/install-storage.php)
-- Correct all paths into [install-storage.php](test/install-storage.php)
+- Copy-paste [test/install-storage.php](test/install-storage.php)
+- Correct all paths into [test/install-storage.php](test/install-storage.php)
 - Correct Templates list, remove unnecessary
-- Run script [install-storage.php](test/install-storage.php)
+- Run script [test/install-storage.php](test/install-storage.php)
 
 ### Create indexes
 
