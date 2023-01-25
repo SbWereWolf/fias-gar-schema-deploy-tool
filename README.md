@@ -24,10 +24,10 @@ First step is to create tables, second - indexes.
 
 ### Create indexes
 
-- Copy-paste [create-indexes.php](create-indexes.php)
-- Correct all paths into [create-indexes.php](create-indexes.php)
+- Copy-paste [test/create-indexes.php](test/create-indexes.php)
+- Correct all paths into [test/create-indexes.php](test/create-indexes.php)
 - Correct Templates list, remove unnecessary
-- Run script [create-indexes.php](create-indexes.php)
+- Run script [test/create-indexes.php](test/create-indexes.php)
 
 ## Create templates and scripts on you own
 
