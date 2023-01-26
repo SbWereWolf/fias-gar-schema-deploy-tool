@@ -19,7 +19,7 @@
   "require": {
     "psr/log": "^3.0",
     "sbwerewolf/json-serialize-trait": "^1.0",
-    "sbwerewolf/batch-file-scripting": "^1.0",
+    "sbwerewolf/batch-file-scripting": "^2.0",
     "ext-pdo": "*",
     "ext-json": "*"
   },

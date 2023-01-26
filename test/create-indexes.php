@@ -3,9 +3,10 @@
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\LogRecord;
-use SbWereWolf\BatchFileScripting\Configuration\EnvReader;
-use SbWereWolf\BatchFileScripting\Convertation\DurationPrinter;
 use SbWereWolf\FiasGarSchemaDeploy\Cli\SqlRunnerWithoutSuffixesCommand;
+use SbWereWolf\Scripting\Config\EnvReader;
+use SbWereWolf\Scripting\Convert\DurationPrinter;
+use SbWereWolf\Scripting\FileSystem\Path;
 
 $startMoment = hrtime(true);
 
@@ -13,19 +14,20 @@ $message = 'Script is starting';
 echo $message . PHP_EOL;
 
 $pathParts = [__DIR__, '..', 'vendor', 'autoload.php',];
-$path = implode(DIRECTORY_SEPARATOR, $pathParts);
-require_once($path);
+$autoloaderPath = join(DIRECTORY_SEPARATOR, $pathParts);
+require_once($autoloaderPath);
 
 $logger = new Logger('common');
 
-$logsPath = [
-    __DIR__,
-    'logs',
-    pathinfo(__FILE__, PATHINFO_FILENAME) . '-' . time() . '.log',
-];
-$path = implode(DIRECTORY_SEPARATOR, $logsPath);
+$pathComposer = new Path(__DIR__);
+$logsPath = $pathComposer->make(
+    [
+        'logs',
+        pathinfo(__FILE__, PATHINFO_FILENAME) . '-' . time() . '.log',
+    ]
+);
 
-$writeHandler = new StreamHandler($path);
+$writeHandler = new StreamHandler($logsPath);
 $logger->pushHandler($writeHandler);
 
 $logger->pushProcessor(function ($record) {
@@ -37,12 +39,8 @@ $logger->pushProcessor(function ($record) {
 
 $logger->notice($message);
 
-$configurationPath = [
-    __DIR__,
-    'pdo.env',
-];
-$path = implode(DIRECTORY_SEPARATOR, $configurationPath);
-(new EnvReader($path))->defineConstants();
+$configPath = $pathComposer->make(['config.env']);
+(new EnvReader($configPath))->defineConstants();
 
 $connection = (new PDO(
     constant('DSN'),
@@ -54,18 +52,14 @@ $connection->exec("SET search_path TO {$schema}");
 
 $logger->notice("Starting creation indexes for all tables");
 
-$parts = [
-    __DIR__,
-    'template',
-];
-$templatePath = implode(DIRECTORY_SEPARATOR, $parts);
+$templatesPath = $pathComposer->make(['template']);
 $command = new SqlRunnerWithoutSuffixesCommand(
     $connection,
     $logger,
-    $templatePath,
+    $templatesPath,
 );
 
-$tablesList = [
+$templatesKitList = [
     'ADDHOUSETYPES',
     'ADDRESSOBJECTTYPES',
     'APARTMENTTYPES',
@@ -95,14 +89,11 @@ $tablesList = [
     'STEADS',
     'STEADS_PARAMS',
 ];
-$command->run(
-    $tablesList,
-    'create-index.php',
-);
+$command->run($templatesKitList, 'create-index.php');
 
 $finishMoment = hrtime(true);
-
 $totalTime = $finishMoment - $startMoment;
+
 $timeParts = new DurationPrinter();
 $printout = $timeParts->printNanoseconds($totalTime);
 $logger->notice("Creation index duration is $printout");

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb2a6d37aa20a92098b50fd00c26d161",
+    "content-hash": "2387e6178c61b17812352f7c3c0b6bf3",
     "packages": [
         {
             "name": "psr/log",
@@ -58,16 +58,16 @@
         },
         {
             "name": "sbwerewolf/batch-file-scripting",
-            "version": "v1.0.1",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SbWereWolf/batch-file-scripting.git",
-                "reference": "980926f53e33212c1f6db14a8fbe55eb836833af"
+                "reference": "3429e86f561290c0ba1c5d78319955a9bfe3a018"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SbWereWolf/batch-file-scripting/zipball/980926f53e33212c1f6db14a8fbe55eb836833af",
-                "reference": "980926f53e33212c1f6db14a8fbe55eb836833af",
+                "url": "https://api.github.com/repos/SbWereWolf/batch-file-scripting/zipball/3429e86f561290c0ba1c5d78319955a9bfe3a018",
+                "reference": "3429e86f561290c0ba1c5d78319955a9bfe3a018",
                 "shasum": ""
             },
             "require": {
@@ -95,9 +95,9 @@
             "description": "Kit of utility classes for batch file scripting",
             "support": {
                 "issues": "https://github.com/SbWereWolf/batch-file-scripting/issues",
-                "source": "https://github.com/SbWereWolf/batch-file-scripting/tree/v1.0.1"
+                "source": "https://github.com/SbWereWolf/batch-file-scripting/tree/v2.0.1"
             },
-            "time": "2023-01-24T23:26:18+00:00"
+            "time": "2023-01-26T17:53:06+00:00"
         },
         {
             "name": "sbwerewolf/json-serialize-trait",
