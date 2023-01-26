@@ -19,7 +19,7 @@ First step is to create tables, second - indexes.
 - Copy-paste directory `test/template` to reachable location
 - Copy-paste [test/install-storage.php](test/install-storage.php)
 - Correct all paths into [test/install-storage.php](test/install-storage.php)
-- Correct Templates list, remove unnecessary
+- Check Templates list, remove unnecessary
 - Run script [test/install-storage.php](test/install-storage.php)
 
 ### Create indexes
