@@ -3,8 +3,7 @@
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\LogRecord;
-use SbWereWolf\FiasGarSchemaDeploy\Cli\SqlRunnerWithoutSuffixesCommand;
-use SbWereWolf\FiasGarSchemaDeploy\Cli\SqlRunnerWithSuffixesCommand;
+use SbWereWolf\FiasGarSchemaDeploy\Cli\ExecuteSqlFromTemplatesCommand;
 use SbWereWolf\Scripting\Config\EnvReader;
 use SbWereWolf\Scripting\Convert\DurationPrinter;
 use SbWereWolf\Scripting\FileSystem\Path;
@@ -41,7 +40,10 @@ $logger->pushProcessor(function ($record) {
 $logger->notice($message);
 
 $configPath = $pathComposer->make(['config.env']);
-(new EnvReader($configPath))->defineConstants();
+$env = new EnvReader($configPath);
+
+$logger->notice('Script run with params:' . json_encode($env));
+$env->defineConstants();
 
 $connection = (new PDO(
     constant('DSN'),
@@ -53,8 +55,10 @@ $connection->exec("SET search_path TO {$schema}");
 
 $logger->notice("Starting create tables");
 
+$connection->beginTransaction();
+
 $templatesPath = $pathComposer->make(['template']);
-$command = new SqlRunnerWithoutSuffixesCommand(
+$command = new ExecuteSqlFromTemplatesCommand(
     $connection,
     $logger,
     $templatesPath,
@@ -94,12 +98,6 @@ $command->run($templatesKitList, 'create-table.php');
 
 $logger->notice("Starting create tables with partitions");
 
-$command = new SqlRunnerWithSuffixesCommand(
-    $connection,
-    $logger,
-    $templatesPath,
-);
-
 $templatesKitList = [
     'ADDR_OBJ_DIVISION',
     'ADDR_OBJ_PARAMS',
@@ -123,11 +121,13 @@ $templatesKitList = [
 $command->run(
     $templatesKitList,
     'create-partition.php',
-    false,
     99,
+    false,
     1
 
 );
+
+$connection->commit();
 
 $finishMoment = hrtime(true);
 $totalTime = $finishMoment - $startMoment;

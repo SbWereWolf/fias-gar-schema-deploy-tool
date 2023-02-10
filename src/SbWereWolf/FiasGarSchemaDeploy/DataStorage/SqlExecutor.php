@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SbWereWolf\FiasGarSchemaDeploy\Cli;
+namespace SbWereWolf\FiasGarSchemaDeploy\DataStorage;
 
 use JsonSerializable;
 use PDO;
@@ -25,7 +25,7 @@ class SqlExecutor implements JsonSerializable
         $this->logger = $logger;
     }
 
-    protected function executeSql(string $sql): bool
+    public function executeSql(string $sql): bool
     {
         $isSuccess = $this->connection->exec($sql) !== false;
 

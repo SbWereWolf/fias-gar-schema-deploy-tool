@@ -3,7 +3,7 @@
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\LogRecord;
-use SbWereWolf\FiasGarSchemaDeploy\Cli\SqlRunnerWithoutSuffixesCommand;
+use SbWereWolf\FiasGarSchemaDeploy\Cli\ExecuteSqlFromTemplatesCommand;
 use SbWereWolf\Scripting\Config\EnvReader;
 use SbWereWolf\Scripting\Convert\DurationPrinter;
 use SbWereWolf\Scripting\FileSystem\Path;
@@ -52,8 +52,10 @@ $connection->exec("SET search_path TO {$schema}");
 
 $logger->notice("Starting creation indexes for all tables");
 
+$connection->beginTransaction();
+
 $templatesPath = $pathComposer->make(['template']);
-$command = new SqlRunnerWithoutSuffixesCommand(
+$command = new ExecuteSqlFromTemplatesCommand(
     $connection,
     $logger,
     $templatesPath,
@@ -90,6 +92,8 @@ $templatesKitList = [
     'STEADS_PARAMS',
 ];
 $command->run($templatesKitList, 'create-index.php');
+
+$connection->commit();
 
 $finishMoment = hrtime(true);
 $totalTime = $finishMoment - $startMoment;
