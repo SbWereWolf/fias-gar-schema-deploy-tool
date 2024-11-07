@@ -5,7 +5,7 @@ use Monolog\Logger;
 use Monolog\LogRecord;
 use SbWereWolf\FiasGarSchemaDeploy\Cli\ExecuteSqlFromTemplatesCommand;
 use SbWereWolf\Scripting\Config\EnvReader;
-use SbWereWolf\Scripting\Convert\DurationPrinter;
+use SbWereWolf\Scripting\Convert\NanosecondsConverter;
 use SbWereWolf\Scripting\FileSystem\Path;
 
 $startMoment = hrtime(true);
@@ -98,8 +98,8 @@ $connection->commit();
 $finishMoment = hrtime(true);
 $totalTime = $finishMoment - $startMoment;
 
-$timeParts = new DurationPrinter();
-$printout = $timeParts->printNanoseconds($totalTime);
+$timeParts = new NanosecondsConverter();
+$printout = $timeParts->print($totalTime);
 $logger->notice("Creation index duration is $printout");
 
 $logger->notice('Script is finished');

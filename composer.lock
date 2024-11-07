@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2387e6178c61b17812352f7c3c0b6bf3",
+  "content-hash": "aa7b88d0c10cef35cbc3e6e913b4c06a",
     "packages": [
         {
             "name": "psr/log",
-            "version": "3.0.0",
+          "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001"
+              "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe5ea303b0887d5caefd3d431c3e61ad47037001",
-                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001",
+              "url": "https://api.github.com/repos/php-fig/log/zipball/f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
+              "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
                 "shasum": ""
             },
             "require": {
@@ -52,22 +52,22 @@
                 "psr-3"
             ],
             "support": {
-                "source": "https://github.com/php-fig/log/tree/3.0.0"
+              "source": "https://github.com/php-fig/log/tree/3.0.2"
             },
-            "time": "2021-07-14T16:46:02+00:00"
+          "time": "2024-09-11T13:17:53+00:00"
         },
         {
             "name": "sbwerewolf/batch-file-scripting",
-            "version": "v2.0.1",
+          "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SbWereWolf/batch-file-scripting.git",
-                "reference": "3429e86f561290c0ba1c5d78319955a9bfe3a018"
+              "reference": "3f225e8576a136d58f5754db79a4e820d6ec6ea6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SbWereWolf/batch-file-scripting/zipball/3429e86f561290c0ba1c5d78319955a9bfe3a018",
-                "reference": "3429e86f561290c0ba1c5d78319955a9bfe3a018",
+              "url": "https://api.github.com/repos/SbWereWolf/batch-file-scripting/zipball/3f225e8576a136d58f5754db79a4e820d6ec6ea6",
+              "reference": "3f225e8576a136d58f5754db79a4e820d6ec6ea6",
                 "shasum": ""
             },
             "require": {
@@ -95,22 +95,22 @@
             "description": "Kit of utility classes for batch file scripting",
             "support": {
                 "issues": "https://github.com/SbWereWolf/batch-file-scripting/issues",
-                "source": "https://github.com/SbWereWolf/batch-file-scripting/tree/v2.0.1"
+              "source": "https://github.com/SbWereWolf/batch-file-scripting/tree/v3.0.4"
             },
-            "time": "2023-01-26T17:53:06+00:00"
+          "time": "2024-11-07T00:24:13+00:00"
         },
         {
             "name": "sbwerewolf/json-serialize-trait",
-            "version": "v1.0.1",
+          "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SbWereWolf/json-serialize-trait.git",
-                "reference": "62c7395a60ad348d9bc91cd6b0cb20d823ad2a8c"
+              "reference": "c4858c307e2f17b783ddb21fb144e52e41ec7b14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SbWereWolf/json-serialize-trait/zipball/62c7395a60ad348d9bc91cd6b0cb20d823ad2a8c",
-                "reference": "62c7395a60ad348d9bc91cd6b0cb20d823ad2a8c",
+              "url": "https://api.github.com/repos/SbWereWolf/json-serialize-trait/zipball/c4858c307e2f17b783ddb21fb144e52e41ec7b14",
+              "reference": "c4858c307e2f17b783ddb21fb144e52e41ec7b14",
                 "shasum": ""
             },
             "require": {
@@ -137,24 +137,24 @@
             "description": "Library with trait of ability to output all properties of class-exemplar at call json_encode()",
             "support": {
                 "issues": "https://github.com/SbWereWolf/json-serialize-trait/issues",
-                "source": "https://github.com/SbWereWolf/json-serialize-trait/tree/v1.0.1"
+              "source": "https://github.com/SbWereWolf/json-serialize-trait/tree/v1.0.2"
             },
-            "time": "2023-01-24T01:03:00+00:00"
+          "time": "2024-06-15T10:05:35+00:00"
         }
     ],
     "packages-dev": [
         {
             "name": "monolog/monolog",
-            "version": "3.2.0",
+          "version": "3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "305444bc6fb6c89e490f4b34fa6e979584d7fa81"
+              "reference": "f4393b648b78a5408747de94fca38beb5f7e9ef8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/305444bc6fb6c89e490f4b34fa6e979584d7fa81",
-                "reference": "305444bc6fb6c89e490f4b34fa6e979584d7fa81",
+              "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f4393b648b78a5408747de94fca38beb5f7e9ef8",
+              "reference": "f4393b648b78a5408747de94fca38beb5f7e9ef8",
                 "shasum": ""
             },
             "require": {
@@ -169,16 +169,16 @@
                 "doctrine/couchdb": "~1.0@dev",
                 "elasticsearch/elasticsearch": "^7 || ^8",
                 "ext-json": "*",
-                "graylog2/gelf-php": "^1.4.2",
-                "guzzlehttp/guzzle": "^7.4",
+              "graylog2/gelf-php": "^1.4.2 || ^2.0",
+              "guzzlehttp/guzzle": "^7.4.5",
                 "guzzlehttp/psr7": "^2.2",
                 "mongodb/mongodb": "^1.8",
                 "php-amqplib/php-amqplib": "~2.4 || ^3",
-                "phpstan/phpstan": "^1.4",
+              "phpstan/phpstan": "^1.9",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-strict-rules": "^1.1",
-                "phpunit/phpunit": "^9.5.16",
-                "predis/predis": "^1.1",
+              "phpstan/phpstan-strict-rules": "^1.4",
+              "phpunit/phpunit": "^10.5.17",
+              "predis/predis": "^1.1 || ^2",
                 "ruflin/elastica": "^7",
                 "symfony/mailer": "^5.4 || ^6",
                 "symfony/mime": "^5.4 || ^6"
@@ -230,7 +230,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/3.2.0"
+              "source": "https://github.com/Seldaek/monolog/tree/3.7.0"
             },
             "funding": [
                 {
@@ -242,18 +242,18 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-07-24T12:00:55+00:00"
+          "time": "2024-06-28T09:40:51+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+  "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "ext-pdo": "*",
         "ext-json": "*"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+  "platform-dev": {},
+  "plugin-api-version": "2.6.0"
 }
